@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routes import auth, medicines, health, diet
+from .routes import auth, medicines, health, diet, analytics
 import uvicorn
 import os
 from dotenv import load_dotenv
@@ -23,6 +23,7 @@ app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
 app.include_router(medicines.router, prefix="/api/medicines", tags=["medicines"])
 app.include_router(health.router, prefix="/api/health", tags=["health"])
 app.include_router(diet.router, prefix="/api/diet", tags=["diet"])
+app.include_router(analytics.router, prefix="/api/analytics", tags=["analytics"])
 
 @app.get("/")
 def home():
