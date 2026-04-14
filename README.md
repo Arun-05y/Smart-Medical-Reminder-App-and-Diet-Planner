@@ -1,73 +1,51 @@
-# Smart Medical Reminder & Diet Planner
+# Smart Medical Reminder & Diet Planner (Python Major)
 
-An AI-powered full-stack application for managing medications and receiving personalized nutrition plans.
+An AI-powered full-stack health platform with a specialized **FastAPI** backend for medical management and personalized nutrition.
 
 ## 🚀 Features
 
-- **User Authentication**: Secure JWT-based registration and login.
-- **Medicine Reminders**: Full CRUD for medications with time-based scheduling.
-- **AI Diet Planner**: Personalized meal plans generated via OpenAI GPT models.
-- **Health Dashboard**: Real-time tracking of water intake, calories, and medicine adherence.
-- **Emergency SOS**: One-click button to send geolocation-linked emergency alerts.
-- **Premium Design**: Dark mode, glassmorphism UI, smooth animations with Framer Motion.
+- **User Authentication**: Secure JWT-based registration and login in Python.
+- **Medicine Reminders**: Managed via asynchronous FastAPI routes.
+- **AI Diet Planner**: GPT-powered meal strategy based on medical profiles.
+- **Health Dashboard**: Tracking water, calories, and adherence with real-time charts.
+- **Emergency SOS**: Geolocation-linked alerts.
+- **Modern UI**: Dark-mode glassmorphism with Framer Motion.
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React, Tailwind CSS, Lucide Icons, Recharts, Framer Motion.
-- **Backend**: Node.js, Express.
-- **Microservices**: Python, FastAPI (for AI Diet Planning).
-- **Database**: MongoDB (Mongoose).
-- **AI**: OpenAI API.
+- **Frontend**: React, Tailwind CSS, Recharts, Framer Motion.
+- **Backend (Primary)**: Python, FastAPI, Motor (Async MongoDB).
+- **AI**: OpenAI GPT-3.5 API.
+- **Database**: MongoDB.
 
 ## 📦 Installation & Setup
 
 ### Prerequisites
+- Python 3.9+
 - Node.js (v18+)
-- MongoDB (Local or Atlas)
-- OpenAI API Key (optional, mock mode available)
+- MongoDB
 
 ### Steps
 
-1. **Clone the repository**
+1. **Clone & Setup Backend**
    ```bash
-   git clone <repository-url>
-   cd SM
-   ```
-
-2. **Backend Setup**
-   ```bash
-   cd server
-   npm install
-   ```
-   - Create a `.env` file in the `server` directory (template provided in `.env`).
-   - Add your `MONGODB_URI` and `OPENAI_API_KEY`.
-   - Start the server:
-     ```bash
-     npm start
-     ```
-
-3. **Python AI Service Setup**
-   ```bash
-   cd ../python_service
+   cd python_backend
    python -m venv venv
    .\venv\Scripts\activate  # Windows
-   source venv/bin/activate # Linux/Mac
    pip install -r requirements.txt
-   uvicorn main:app --reload --port 8000
+   uvicorn main:app --reload --port 8080
    ```
+   - Ensure `OPENAI_API_KEY` is set in `python_backend/.env`.
 
-4. **Frontend Setup**
+2. **Setup Frontend**
    ```bash
    cd ../client
    npm install
    npm run dev
    ```
 
-4. **Access the App**
-   Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-## 🧪 Usage Note
-If no `OPENAI_API_KEY` is provided, the Diet Planner will operate in **Mock Mode**, providing realistic sample diet plans for demonstration purposes.
+3. **Legacy Node.js Backend** (Optional)
+   The original Node.js implementation is kept in the `server/` directory for reference.
 
 ---
 Built with ❤️ by Antigravity AI
